@@ -2,7 +2,7 @@ class PigLatinizer
 
   attr_accessor :user_phrase
 
-  def oinkway(word)
+  def to_pig_latin(word)
     if word.downcase.index(/[aeiou]/) == 0
       word + "way"
     else
@@ -14,7 +14,7 @@ class PigLatinizer
 
   def piglatinize(phrase)
     word_array = phrase.to_s.split(' ')
-    @user_phrase = word_array.collect{|word| oinkway(word)}.join(" ")
+    @user_phrase = word_array.collect{|word| to_pig_latin(word)}.join(" ")
   end
 
 
